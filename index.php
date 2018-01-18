@@ -5,6 +5,11 @@ require_once 'libs/flight/Flight.php';
 
 
 function theater(){
+    ?>
+<script>
+    console.log("Dans theater");
+</script>
+    <?php
     echo "salut c'est cool";
 }
 
