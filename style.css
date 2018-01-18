@@ -463,8 +463,8 @@ body{
     border: 1px solid black;
     padding: 10% 5%;
     margin-left: auto;
-  margin-right: auto;
-  width: 50em;
+    margin-right: auto;
+    width: 50em;
     text-align: center;
     background-color: white;
 }
@@ -484,7 +484,6 @@ body{
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
-  text-align: center;
 }
 
 .btn:hover {
@@ -495,4 +494,11 @@ body{
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+}
+
+.btnPlace{
+  position: absolute;
+  left: 60%;
+  top: 10%;
+  padding: auto;
 }
