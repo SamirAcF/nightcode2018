@@ -48,8 +48,17 @@
        $requete=$bdd->prepare('SELECT * from showtimes');
        $requete->execute();
        while ($data = $requete->fetch()) {
-         ?>
-         <td><?php echo $data['id'];?></td>
+
+				$requete=$bdd->prepare('SELECT id,name from showtimes;');
+				$requete->execute();
+				echo "Choisissez la seance que vous voulez voir : ";
+				echo "<select name='selectSeance' id='selectSeance'>";
+				while ($data = $requete->fetch()) {
+		    echo "<option value=".$data['id'].">".$data['name']."</option>";
+				}
+				echo "</select>";
+				?>
+        <input type = "submit" name="btn" value = "Envoyer">
        <?php } ?>
      </tr>
    </table>

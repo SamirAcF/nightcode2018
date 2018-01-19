@@ -8,11 +8,12 @@
  </head>
  <body>
    <header>
+     <h1>Ajouter des Séances</h1>
      <div class="btnPlace">
        <table>
          <tr>
            <td>
-             <a href="index.php">
+             <a href="listeSeance.php">
                <div class="btn">
                  <p>Retour</p>
                </div>
@@ -35,16 +36,7 @@
        <label for="Seance">Nom de la Seance</label>
        <input type="text" id="addSeance" name="addSeance" />
        <br><br>
-       <!--if ($requete==1) {
-         header('location:addSeance.php?ajout_seance=reussi');
-       }
-       else
-       {
-         header('location:addSeance.php?ajout_seance=rate');
-       }
 
-       ?>
--->
          <div class="btn">
            <input type=submit VALUE="Enregistrer">
          </div>
