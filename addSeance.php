@@ -30,21 +30,12 @@
      </div>
    </header>
    <div class="global">
-     <div class="box">
+     <form method="post" action="addSeance.php">
+       <div class="box">
        <label for="Seance">Nom de la Seance</label>
        <input type="text" id="addSeance" name="addSeance" />
        <br><br>
-       <?php
-       try{
-         // On se connecte à MySQL
-         $bdd = new PDO('mysql:host=localhost;dbname=theater;charset=utf8', 'root', '');
-       }
-       catch(Exception $e){
-         // En cas d'erreur, on affiche un message et on arrête tout
-         die('Erreur : '.$e->getMessage());
-       }
-       $requete=$bdd->exec("INSERT INTO showtimes(nom_seance) VALUES (".$nom.");");
-       if ($requete==1) {
+       <!--if ($requete==1) {
          header('location:addSeance.php?ajout_seance=reussi');
        }
        else
@@ -53,12 +44,31 @@
        }
 
        ?>
-
+-->
          <div class="btn">
-           <p>Enregistrer</p>
+           <input type=submit VALUE="Enregistrer">
          </div>
        </a>
      </div>
+   </form>
+
+   <?php
+   if(isset($_POST['addSeance']))
+   {
+     try{
+       // On se connecte à MySQL
+       $bdd = new PDO('mysql:host=localhost;dbname=theater;charset=utf8', 'root', '');
+     }
+     catch(Exception $e){
+       // En cas d'erreur, on affiche un message et on arrête tout
+       die('Erreur : '.$e->getMessage());
+     }
+     $nom = "\"".$_POST['addSeance']."\"";
+     $requete=$bdd->exec("INSERT INTO showtimes(name) VALUES (".$nom.");");
+     }
+   ?>
+
+
    </div>
    <footer>
    </footer>
